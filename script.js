@@ -15,7 +15,7 @@ const tasks = [
     
    
 ];
-
+//kranthi
 const navDiv = document.getElementById("nav_div");
 const contentFrame = document.getElementById("content_frame");
 const defaultText = document.getElementById("default_text");
