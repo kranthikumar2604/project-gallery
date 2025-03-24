@@ -15,32 +15,33 @@ body {
 
 /* Header */
 header {
-    background:#1b2432; /* Soft Cyan-Blue */
-    padding: 20px;
+    background: #1b2432; /* Soft Cyan-Blue */
+    padding: 10px 0; /* Reduced padding */
     text-align: center;
     box-shadow: 0px 4px 10px rgba(0, 188, 212, 0.3);
 }
 
 header h1 {
     margin: 0;
-    font-size: 32px;
+    font-size: 18px; /* Reduced font size */
     font-weight: 600;
 }
 
 header p {
-    font-size: 16px;
+    font-size: 10px; /* Reduced font size */
     opacity: 0.9;
 }
 
 /* Main Layout */
 .main-container {
     display: flex;
+    flex: 1;
     height: 100%;
 }
 
 /* Sidebar - Task Navigation */
 .sidebar {
-    width: 260px; /* Sidebar width for full screen */
+    width: 260px; /* Sidebar width */
     background: #1b2432; /* Dark Gray */
     padding: 20px;
     box-shadow: 2px 0px 10px rgba(0, 188, 212, 0.1);
@@ -52,15 +53,15 @@ header p {
 
 /* Task Navigation Items */
 .nav_item {
-    padding: 12px 15px;
-    background: #758694; /* Cyan Button */
+    padding: 8px 12px; /* Reduced padding */
+    background: #758694;
     color: rgb(237, 249, 249);
     font-weight: 400;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     text-align: left;
-    font-size: 16px;
+    font-size: 12px; /* Reduced font size */
     transition: background 0.3s ease, transform 0.2s;
     box-shadow: 1px 1px 5px rgba(0, 188, 212, 0.2);
 }
@@ -70,11 +71,12 @@ header p {
     transform: scale(1.05);
 }
 
-/* Content Area */
+/* Content Area (Project Gallery) */
 #content_section {
-    flex: 1;
+    flex-grow: 1; /* Make it expand */
+    width: 100%; /* Ensure full width */
     padding: 30px;
-    background: #f7fafd; /* Slightly lighter gray */
+    background: #f7fafd;
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 188, 212, 0.2);
     display: flex;
@@ -90,13 +92,13 @@ header p {
     color: #00BCD4;
 }
 
-/* Full-Screen Iframe */
+/* Full-Screen Iframe (Project Gallery) */
 #content_frame {
     width: 100%;
-    height: 80vh;
+    height: 90vh; /* Larger on bigger screens */
     border: none;
     display: block;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 /* Footer */
@@ -111,37 +113,47 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     .main-container {
-        flex-direction: column; /* Stack the content vertically */
+        flex-direction: column; /* Stack vertically */
     }
-    
+
     .sidebar {
-        width: 100%; /* Full width for sidebar when screen size is small */
+        width: 100%;
         height: auto;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        padding: 10px 0;
-        flex-wrap: wrap; /* Allow sidebar items to wrap */
+        padding: 8px 0;
+        flex-wrap: wrap;
         box-shadow: 0px 4px 10px rgba(0, 188, 212, 0.3);
         position: relative;
     }
 
+    /* Adjust task items for small screens */
     .nav_item {
-        flex: 1 1 120px; /* Allow nav items to take equal space */
-        text-align: center;
-        padding: 12px 0;
+        font-size: 10px;
+        padding: 6px 8px;
+    }
+
+    /* Make header even smaller */
+    header {
+        padding: 5px 0;
     }
 
     header h1 {
-        font-size: 24px;
-    }
-
-    #content_section {
-        padding: 20px;
-        margin-top: 10px; /* Add space below the tasks */
-    }
-
-    #default_text {
         font-size: 16px;
+    }
+
+    header p {
+        font-size: 10px;
+    }
+
+    /* Reduce padding of content on smaller screens */
+    #content_section {
+        padding: 10px;
+    }
+
+    /* Make project gallery smaller on small screens */
+    #content_frame {
+        height: 70vh;
     }
 }
