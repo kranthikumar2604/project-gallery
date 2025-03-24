@@ -1,5 +1,5 @@
 const tasks = [
-    { title: "Task 1", url: "./project/task1.html" },
+    { title: "Task 1", url: "./task1.html" },
     { title: "Task 2", url: "./task9.html" },
     { title: "Task 3", url: "./task10.html" },
     { title: "Task 4", url: "./task12.html" },
