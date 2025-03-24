@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Stack with Tasks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .task-container {
+            margin-bottom: 20px;
+        }
+        input, button {
+            padding: 8px;
+            margin: 5px;
+        }
+        #task-list {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="task-container">
+        <input type="text" id="task-name" placeholder="Enter Task Name">
+        <button onclick="addTask()">Add Task</button>
+        <button onclick="undoTask()">Undo Task</button>
+    </div>
+
+    <div>
+        <h3>Process Line:</h3>
+        <div id="task-list">No tasks added yet.</div>
+    </div>
+
+    <script>
+        // Initialize an empty array to act as the call stack
+        let taskStack = [];
+
+        // Function to add a task to the stack
+        function addTask() {
+            const taskInput = document.getElementById("task-name");
+            const taskName = taskInput.value.trim();
+
+            if (taskName !== "") {
+                taskStack.push(taskName);
+                taskInput.value = ""; // Clear the input field
+                updateTaskList();
+            } else {
+                alert("Please enter a valid task name.");
+            }
+        }
+
+        // Function to undo the last added task
+        function undoTask() {
+            if (taskStack.length > 0) {
+                taskStack.pop();
+                updateTaskList();
+            } else {
+                alert("No tasks to undo.");
+            }
+        }
+
+        // Function to update the displayed task pipeline
+        function updateTaskList() {
+            const taskListDiv = document.getElementById("task-list");
+
+            if (taskStack.length === 0) {
+                taskListDiv.innerHTML = "No tasks added yet.";
+            } else {
+                taskListDiv.innerHTML = taskStack.join("<br>");
+            }
+        }
+    </script>
+
+</body>
+</html>
