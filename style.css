@@ -1,0 +1,110 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #101622; /* Dark Background */
+    color: #ffffff; /* White Text */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header */
+header {
+    background:#1b2432; /* Soft Cyan-Blue */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 188, 212, 0.3);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+header p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Main Layout */
+.main-container {
+    display: flex;
+    height: 100%;
+}
+
+/* Sidebar - Task Navigation */
+.sidebar {
+    width: 260px;
+    background: #1b2432; /* Dark Gray */
+    padding: 20px;
+    box-shadow: 2px 0px 10px rgba(0, 188, 212, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Task Navigation Items */
+.nav_item {
+    padding: 12px 15px;
+    background: #758694; /* Cyan Button */
+    color: rgb(237, 249, 249);
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s;
+    box-shadow: 1px 1px 5px rgba(0, 188, 212, 0.2);
+}
+
+.nav_item:hover {
+    background: #00BCD4;
+    transform: scale(1.05);
+}
+
+/* Content Area */
+#content_section {
+    flex: 1;
+    padding: 30px;
+
+    background: #f7fafd; /* Slightly lighter gray */
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 188, 212, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Default Message */
+#default_text {
+    font-size: 20px;
+    font-weight: 400;
+    color: #00BCD4;
+}
+
+/* Full-Screen Iframe */
+#content_frame {
+    width: 100%;
+    height: 80vh;
+    border: none;
+    display: block;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #1b2432;
+    padding: 15px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
