@@ -40,13 +40,14 @@ header p {
 
 /* Sidebar - Task Navigation */
 .sidebar {
-    width: 260px;
+    width: 260px; /* Sidebar width for full screen */
     background: #1b2432; /* Dark Gray */
     padding: 20px;
     box-shadow: 2px 0px 10px rgba(0, 188, 212, 0.1);
     display: flex;
     flex-direction: column;
     gap: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Task Navigation Items */
@@ -73,7 +74,6 @@ header p {
 #content_section {
     flex: 1;
     padding: 30px;
-
     background: #f7fafd; /* Slightly lighter gray */
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 188, 212, 0.2);
@@ -108,3 +108,40 @@ footer {
     opacity: 0.8;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* Stack the content vertically */
+    }
+    
+    .sidebar {
+        width: 100%; /* Full width for sidebar when screen size is small */
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+        flex-wrap: wrap; /* Allow sidebar items to wrap */
+        box-shadow: 0px 4px 10px rgba(0, 188, 212, 0.3);
+        position: relative;
+    }
+
+    .nav_item {
+        flex: 1 1 120px; /* Allow nav items to take equal space */
+        text-align: center;
+        padding: 12px 0;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    #content_section {
+        padding: 20px;
+        margin-top: 10px; /* Add space below the tasks */
+    }
+
+    #default_text {
+        font-size: 16px;
+    }
+}
